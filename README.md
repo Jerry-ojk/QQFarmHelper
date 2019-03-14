@@ -1,4 +1,4 @@
-# QQFormHelper
+# QQFarmHelper
 一款Android端的QQ农场助手，目前可以自动偷菜、种植、收获；自动处理魔法池、蜂巢、潜艇、许愿树等
 
 目前功能还没有全部完成

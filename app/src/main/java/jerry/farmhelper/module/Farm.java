@@ -321,15 +321,20 @@ public class Farm {
     }
 
     public int parseAction(JSONObject item) {
-        if (item.getString("code").charAt(0) == '1') {
-            activity.tv_log.append("\n操作");
+        char code = item.getString("code").charAt(0);
+        if (code == '1') {
+            activity.tv_log.append("\n操作土地[");
             activity.tv_log.append(item.getString("farmlandIndex"));
-            activity.tv_log.append("号土地经验+");
+            activity.tv_log.append("]土地：经验+");
             String exp = item.getString("exp");
             activity.tv_log.append(exp);
             return Integer.parseInt(exp, 10);
-        } else {
-            Log.e("parseAction", item.toString());
+        } else if (code == '0') {
+            activity.tv_log.append("\n操作土地[");
+            activity.tv_log.append(item.getString("farmlandIndex"));
+            activity.tv_log.append("]失败：");
+            String exp = item.getString("direction");
+            activity.tv_log.append(exp);
         }
         return 0;
     }

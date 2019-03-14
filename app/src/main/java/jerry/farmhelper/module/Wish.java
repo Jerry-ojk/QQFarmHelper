@@ -50,7 +50,7 @@ public class Wish {
                         JSONArray starList = data.getJSONArray("starlist");
                         int size = starList.size();
                         char id = (char) ('1' + size);
-                        for (int i = 0; i <= size; i++) {
+                        for (int i = 0; i < size; i++) {
                             if (starList.getIntValue(i) != i + 1) {
                                 id = (char) (i + '0');
                                 break;

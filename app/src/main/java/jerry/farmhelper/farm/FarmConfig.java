@@ -46,9 +46,11 @@ public class FarmConfig {
         int len = originalCookies.length();
         char[] chars = new char[len];
         originalCookies.getChars(0, len, chars, 0);
-        int o = 70;
+        int o = 4;
         for (; o < len; o++) {
-            if (chars[o] == 'o') break;
+            if (chars[o] == 'o' && chars[o - 1] == '=' && chars[o - 2] == 'n' && chars[o - 3] == 'i' && chars[o - 4] == 'u') {
+                break;
+            }
         }
         int qqLen = 4;
         for (; qqLen < 12; qqLen++) {
